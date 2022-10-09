@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset = UTF-8>
+    <title>ML API</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet", href="{{url_for('static', filename='css/style.css')}}">
+</head>
+
+<body>
+<div class="Login">
+    <h1>Airfoil Prediction</h1>
+
+    <!--Main Input for Receiving Query to our ML -->
+    <form action="{{url_for('predict')}}" method="POST">
+        <input type="text" name="Frequency" placeholder="Frequency" required="required" /><br>
+        <input type="text" name="Angle_of_Attack" placeholder="Angle_of_Attack" required="required" /><br>
+        <input type="text" name="Chord_Len" placeholder="Chord_Len" required="required" /><br>
+        <input type="text" name="Velocity" placeholder="Velocity" required="required" /><br>
+        <input type="text" name="Displacement" placeholder="Displacement" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+    <br>
+    <br>
+
+</div>
+{{prediction_text}}
+
+</body>
+</html>
